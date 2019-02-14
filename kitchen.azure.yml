@@ -1,0 +1,32 @@
+---
+driver:
+  name: azurerm
+  azure_resource_group_prefix: kitchen-<%= ENV['USER'] %>-
+  vm_tags:
+    X-Contact: <%= ENV['USER'] %>
+    X-Application: "Test-Kitchen"
+    X-Customer: "Test-Kitchen"
+    X-Project: "Test-Kitchen"
+    X-TTL: "4"
+
+driver_config:
+  subscription_id: <%= ENV["AZURE_SUBSCRIPTION_ID"] %>
+  location: 'North Europe'
+  machine_size: 'Standard_D2s_v3'
+
+transport:
+  ssh_key: <%= ENV["SSH_KEY"] %>
+
+platforms:
+  # - name: az-ubuntu-16.04
+  #   driver_config:
+  #     image_urn: Canonical:UbuntuServer:16.04-LTS:latest
+  #     vm_name: xenial-vm
+  #     vm_tags:
+  #       ostype: linux
+  #       distro: ubuntu
+  - name: windows2016
+    driver:
+      image_urn: MicrosoftWindowsServer:WindowsServer:2016-Datacenter:latest
+    transport:
+      name: winrm
