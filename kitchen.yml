@@ -14,6 +14,7 @@ verifier:
 
 platforms:
   - name: windows-2016
+  - name: windows-2012r2
 
 suites:
   - name: default
@@ -22,4 +23,13 @@ suites:
     verifier:
       inspec_tests:
         - test/integration/default
+    attributes:
+  - name: domaincontroller
+    run_list:
+      - recipe[windows_ad::default]
+      - recipe[windows_ad::contoso]
+      - recipe[windows_group_repro::domaincontroller]
+    verifier:
+      inspec_tests:
+        - test/integration/domaincontroller
     attributes:
