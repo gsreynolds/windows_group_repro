@@ -18,9 +18,9 @@ transport:
   name: winrm
 
 platforms:
-  - name: windows-2016
-    driver:
-      image_urn: MicrosoftWindowsServer:WindowsServer:2016-Datacenter:latest
+  # - name: windows-2016
+  #   driver:
+  #     image_urn: MicrosoftWindowsServer:WindowsServer:2016-Datacenter:latest
   - name: windows-2012r2
     driver:
       image_urn: MicrosoftWindowsServer:WindowsServer:2012-R2-Datacenter:latest

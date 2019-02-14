@@ -12,5 +12,5 @@ driver:
     X-TTL: '4'
 
 platforms:
-  - name: windows-2016
+  # - name: windows-2016
   - name: windows-2012r2
